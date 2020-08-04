@@ -19,15 +19,15 @@ export class AppComponent {
           let fetchedSatellites = data.satellites;
           let newSatellite = {}
           
-          for(let i = 0; i <data.satellites.length; i++) {
-            newSatellite = {
-              name: fetchedSatellites[i].name,
-              type: fetchedSatellites[i].type,
-              launchDate: fetchedSatellites[i].launchDate,
-              orbitType: fetchedSatellites[i].orbitType,
-              operational: fetchedSatellites[i].operational
+          for(let i = 0; i <fetchedSatellites.length; i++) {
+            newSatellite = new Satellite (
+              fetchedSatellites[i].name,
+              fetchedSatellites[i].type,
+              fetchedSatellites[i].launchDate,
+              fetchedSatellites[i].orbitType,
+              fetchedSatellites[i].operational
 
-            }
+            )
             this.sourceList.push(newSatellite);
           }
        }.bind(this));
