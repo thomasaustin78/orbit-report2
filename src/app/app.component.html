@@ -7,8 +7,11 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<app-orbit-list [satellites]="sourceList"></app-orbit-list>
-
+<app-orbit-list [satellites]="displayList"></app-orbit-list>
+<div class="search-form">
+  <input #searchTerm (keyup.enter)="search(searchTerm.value)">
+  <button on-click="search(searchTerm.value)">Search</button>
+</div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
